@@ -13,6 +13,10 @@ import {
   FaTimes,
   FaPhoneAlt,
   FaChevronRight,
+  FaHome,
+  FaBriefcase,
+  FaUsers,
+  FaEnvelopeOpenText,
 } from "react-icons/fa";
 import { useState } from "react";
 
@@ -24,10 +28,10 @@ const socialLinks = [
 ];
 
 const navLinks = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "#inicio", label: "Inicio", icon: FaHome },
+  { href: "#servicios", label: "Servicios", icon: FaBriefcase },
+  { href: "#nosotros", label: "Nosotros", icon: FaUsers },
+  { href: "#contacto", label: "Contacto", icon: FaEnvelopeOpenText },
 ];
 
 export default function NavbarTopBar() {
@@ -98,17 +102,29 @@ export default function NavbarTopBar() {
           </Link>
 
           {/* MENU */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-sm font-medium relative transition-all duration-300 hover:text-[#7f8f2f] text-black"
-              >
-                {item.label}
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] text-black transition-all duration-300 hover:w-full"></span>
-              </Link>
-            ))}
+          <div className="hidden lg:flex items-center gap-6">
+            {navLinks.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="group relative flex items-center gap-2 px-3 py-2 text-sm font-medium text-black transition-all duration-300"
+                >
+                  <Icon className="text-[14px] transition-transform duration-300 group-hover:scale-110 group-hover:text-[#7f8f2f]" />
+
+                  <span className="relative z-10 group-hover:text-[#7f8f2f] transition-colors duration-300">
+                    {item.label}
+                  </span>
+
+                  {/* Línea animada */}
+                  <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-[#7f8f2f] transition-all duration-300 group-hover:w-full"></span>
+
+                  {/* Fondo hover suave */}
+                  <span className="absolute inset-0 rounded-md bg-[#c6d647]/0 group-hover:bg-[#c6d647]/20 transition-all duration-300"></span>
+                </Link>
+              );
+            })}
 
             <Link
               href="#contacto"
@@ -130,15 +146,18 @@ export default function NavbarTopBar() {
         {/* MOBILE MENU */}
         {open && (
           <div className="lg:hidden px-4 pb-4">
-            {navLinks.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="block py-2 transition hover:text-[#7f8f2f]"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navLinks.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="flex items-center gap-2 py-2 transition hover:text-[#7f8f2f]"
+                >
+                  <Icon /> {item.label}
+                </Link>
+              );
+            })}
           </div>
         )}
       </nav>
