@@ -12,6 +12,7 @@ import CTASection from "@/components/cta";
 import Footer from "@/components/footer"; 
 import { ScrollToTop } from "@/components/float-buttons/ScrollToTop";
 import { FloatingWhatsApp } from "@/components/float-buttons/FloatingWhatsApp";
+import PromoFloatingButton from "@/components/float-buttons/PromoFloatingButton";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
 
       <ScrollToTop />
       <FloatingWhatsApp />
+      <PromoFloatingButton />
     </main>
   );  
 }

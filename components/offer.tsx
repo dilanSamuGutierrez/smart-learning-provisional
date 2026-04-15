@@ -1,10 +1,12 @@
 "use client";
 
 import { FaCheckCircle, FaPaperPlane, FaEnvelope } from "react-icons/fa";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function OfertaPrincipalSection() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden" id="contacto">
       <div
         className="absolute inset-0 bg-fixed bg-center bg-cover"
         style={{
@@ -12,13 +14,19 @@ export default function OfertaPrincipalSection() {
         }}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-[#050816]/90 via-[#0f172a]/80 to-[#0f172a]/55" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#050816]/90 via-[#0f172a]/80 to-[#0f172a]/55" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(198,214,71,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(183,199,114,0.12),transparent_35%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           {/* Formulario */}
-          <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
             <div className="rounded-3xl rounded-bl-none border border-white/15 bg-white/95 p-6 shadow-2xl backdrop-blur-md sm:p-8">
               <div className="mb-6">
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#c6d647]">
@@ -126,10 +134,16 @@ export default function OfertaPrincipalSection() {
                 </div>
               </form>
             </div>
-          </div>
+          </motion.div>
 
           {/* Texto */}
-          <div className="max-w-2xl text-white">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-2xl text-white"
+          >
             <span className="inline-flex rounded-full border border-[#c6d647]/30 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#c6d647] backdrop-blur-sm">
               Oferta principal
             </span>
@@ -178,11 +192,15 @@ export default function OfertaPrincipalSection() {
               </div>
             </div>
 
-            <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#c6d647] px-5 py-3 text-sm font-semibold text-slate-900 shadow-lg transition hover:scale-[1.02] hover:shadow-xl">
+            <Link
+              href="https://wa.me/573212426083?text=Hola%2C%20tengo%20el%20c%C3%B3digo%20SMART100%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20certificaci%C3%B3n"
+              target="_blank"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#c6d647] px-5 py-3 text-sm font-semibold text-slate-900 shadow-lg transition hover:scale-[1.02] hover:shadow-xl"
+            >
               <FaPaperPlane className="h-4 w-4" />
               Solicita tu certificación hoy con SMART100
-            </div>
-          </div>
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -7,7 +7,7 @@ export default function FinalCTASection() {
     <section className="relative overflow-hidden bg-[#050816] py-20 sm:py-24 lg:py-28">
       
       {/* FONDOS */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#050816] via-[#0f172a] to-[#1a2238]" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#050816] via-[#0f172a] to-[#1a2238]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(198,214,71,0.18),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(183,199,114,0.12),transparent_40%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -30,7 +30,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="bg-white py-14 lg:py-12">
+    <section className="bg-white py-14 lg:py-12" id="faq">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           {/* Left side */}

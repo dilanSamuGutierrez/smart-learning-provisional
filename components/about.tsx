@@ -1,125 +1,131 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import { FaPhoneAlt } from "react-icons/fa";
 import { GiGraduateCap } from "react-icons/gi";
 import { MdPublic } from "react-icons/md";
 
 export default function AboutSection() {
   return (
-    <section className="w-full bg-white py-8">
-    <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-
+    <section className="w-full bg-white py-4 sm:py-12 lg:py-16" id="nosotros">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
+        
         {/* LEFT IMAGE */}
-        <div className="relative w-full h-full">
-        <img
-            src="/about.webp"
-            className="w-full h-full object-contain"
-        />
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="relative order-2 w-full overflow-hidden rounded-3xl lg:order-1"
+        >
+          <div className="relative h-100 w-full sm:h-110 lg:h-140">
+            <Image
+              src="/about.webp"
+              alt="Certificación de inglés"
+              fill
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+          </div>
 
-        <div className="absolute bottom-4 left-4 bg-[#c6d647] rounded-xl px-4 py-2 shadow-md">
-            <span className="text-black font-semibold text-sm">
-            Certificación rápida y válida
+          <div className="absolute bottom-4 left-4 rounded-xl bg-[#c6d647] px-4 py-2 shadow-md">
+            <span className="text-sm font-semibold text-black">
+              Certificación rápida y válida
             </span>
-        </div>
-        </div>
+          </div>
+        </motion.div>
 
         {/* RIGHT CONTENT */}
-        <div className="text-center md:text-left">
-
-        {/* MINI TEXTO */}
-        <p className="text-sm uppercase tracking-widest text-[#c6d647] font-semibold mb-2">
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="order-1 text-center lg:order-2 lg:text-left"
+        >
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#c6d647]">
             Nuestra solución
-        </p>
+          </p>
 
-        {/* H2 SEO */}
-        <h2 className="text-3xl md:text-4xl font-bold text-black leading-tight">
+          <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">
             Certificación de inglés{" "}
-            <span className="text-[#c6d647]">
-            rápida y válida
-            </span>{" "}
-            sin procesos complicados
-        </h2>
+            <span className="text-[#c6d647]">rápida y válida</span> sin procesos complicados
+          </h2>
 
-        {/* TEXTO */}
-        <p className="text-gray-600 mt-4">
+          <p className="mt-4 text-gray-600">
             En Smart Learning te ayudamos a obtener tu certificación de inglés de forma ágil,
             con acompañamiento y sin perder tiempo en procesos innecesarios.
-        </p>
+          </p>
 
-        {/* FEATURES + TESTIMONIO */}
-        <div className="mt-6 grid md:grid-cols-2 gap-6 items-start">
-
-            {/* FEATURES */}
-            <div className="space-y-5">
-
-            <div className="flex items-start gap-3">
-                <div className="bg-[#c6d647] p-3 rounded-full text-black text-lg">
-                <GiGraduateCap />
+          {/* FEATURES + TESTIMONIO */}
+          <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="space-y-5 text-left">
+              <div className="flex items-start gap-3">
+                <div className="rounded-full bg-[#c6d647] p-3 text-lg text-black">
+                  <GiGraduateCap />
                 </div>
                 <div>
-                <h4 className="font-semibold text-black">Proceso simplificado</h4>
-                <p className="text-gray-600 text-sm">
+                  <h4 className="font-semibold text-black">Proceso simplificado</h4>
+                  <p className="text-sm text-gray-600">
                     Sin trámites largos ni pasos innecesarios.
-                </p>
+                  </p>
                 </div>
-            </div>
+              </div>
 
-            <div className="flex items-start gap-3">
-                <div className="bg-[#c6d647] p-3 rounded-full text-black text-lg">
-                <MdPublic />
+              <div className="flex items-start gap-3">
+                <div className="rounded-full bg-[#c6d647] p-3 text-lg text-black">
+                  <MdPublic />
                 </div>
                 <div>
-                <h4 className="font-semibold text-black">100% enfocado en tu objetivo</h4>
-                <p className="text-gray-600 text-sm">
+                  <h4 className="font-semibold text-black">100% enfocado en tu objetivo</h4>
+                  <p className="text-sm text-gray-600">
                     Obtén tu certificado para grado o trabajo sin perder tiempo.
-                </p>
+                  </p>
                 </div>
-            </div>
-
+              </div>
             </div>
 
             {/* TESTIMONIO */}
-            <div className="relative h-fit rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div className="h-fit rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="mb-3 text-2xl font-bold text-[#b7c772]">“”</div>
 
-            {/* quote icon */}
-            <div className="mb-3 text-[#b7c772] text-2xl font-bold">
-                “”
-            </div>
+              <p className="text-sm leading-relaxed italic text-gray-600">
+                “Gracias a Smart Learning logré obtener mi certificación de inglés a tiempo
+                para graduarme. Todo fue rápido y sencillo.”
+              </p>
 
-            <p className="text-gray-600 text-sm leading-relaxed italic">
-                “Gracias a Smart Learning logré obtener mi certificación de inglés a tiempo para graduarme. Todo fue rápido y sencillo.”
-            </p>
-
-            <div className="mt-5 flex items-center justify-between">
-
-                <div className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded-full bg-[#b7c772]/20 flex items-center justify-center text-[#b7c772] font-bold text-sm">
-                    SL
+              <div className="mt-5 flex items-center gap-2">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#b7c772]/20 text-sm font-bold text-[#b7c772]">
+                  SL
                 </div>
-
-                <div className="text-xs text-gray-500">
-                    Estudiante verificado
-                </div>
-                </div>
-
+                <div className="text-xs text-gray-500">Estudiante verificado</div>
+              </div>
             </div>
-            </div>
+          </div>
 
-        </div>
-
-        {/* CTA */}
-        <div className="mt-8 flex flex-col md:flex-row items-center gap-6">
-            <button className="bg-[#c6d647] text-black px-6 py-3 rounded-full rounded-bl-none font-semibold hover:opacity-90">
-            Obtener mi certificación
-            </button>
+          {/* CTA */}
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
+            
+            {/* BOTÓN WHATSAPP */}
+            <Link
+              href="https://wa.me/573212426083?text=Quiero%20obtener%20más%20información%20sobre%20sus%20servicios%20y%20certificaciones"
+              target="_blank"
+              className="rounded-full rounded-bl-none bg-[#c6d647] px-6 py-3 font-semibold text-black shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
+            >
+              Obtener mi certificación
+            </Link>
 
             <div className="flex items-center gap-2 text-black">
-            <FaPhoneAlt />
-            <span className="font-semibold">+57 123 456 7890</span>
+              <FaPhoneAlt />
+              <span className="font-semibold">+57 321 242 6083</span>
             </div>
-        </div>
-
-        </div>
-    </div>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

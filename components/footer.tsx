@@ -13,9 +13,8 @@ export default function Footer() {
           {/* LOGO + INFO */}
           <div>
             <div className="flex items-center gap-3">
-              {/* LOGO */}
               <Image
-                src="/logo.png" // cambia por tu logo
+                src="/logo.png"
                 alt="Logo"
                 width={50}
                 height={50}
@@ -43,7 +42,7 @@ export default function Footer() {
 
               <div className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-[#c6d647]" />
-                <span>Bucaramanga, Colombia</span>
+                <span>Atención 100% online en toda Colombia</span>
               </div>
             </div>
           </div>
@@ -76,36 +75,45 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-
-            <a
-              href="https://wa.me/573000000000"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full rounded-bl-none bg-[#c6d647] px-5 py-3 text-sm font-semibold text-slate-900 shadow-md transition hover:shadow-lg hover:-translate-y-0.5"
-            >
-              <FaWhatsapp />
-              WhatsApp
-            </a>
           </div>
 
-          {/* MAPA */}
+          {/* BLOQUE REEMPLAZO (ANTES MAPA) */}
           <div>
             <h3 className="text-lg font-semibold text-slate-900">
-              Ubicación
+              Atención inmediata
             </h3>
 
-            <div className="mt-5 overflow-hidden rounded-3xl rounded-bl-none border border-slate-200 shadow-sm">
-              <iframe
-                src="https://www.google.com/maps?q=Bucaramanga,Colombia&output=embed"
-                width="100%"
-                height="250"
-                loading="lazy"
-                className="w-full h-[250px] border-0"
-              />
+            <div className="mt-5 rounded-3xl rounded-bl-none border border-slate-200 p-6 shadow-sm bg-slate-50">
+              
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Nuestro equipo responde rápido para ayudarte a iniciar tu proceso sin perder tiempo.
+              </p>
+
+              <ul className="mt-4 space-y-3 text-sm text-slate-700">
+                <li className="flex items-center gap-2">
+                  Atención personalizada
+                </li>
+                <li className="flex items-center gap-2">
+                  Respuesta en minutos
+                </li>
+                <li className="flex items-center gap-2">
+                  Proceso guiado paso a paso
+                </li>
+              </ul>
+
+              <a
+                href="https://wa.me/573212426083?text=Quiero%20obtener%20más%20info%20sobre%20sus%20servicios%20y%20certificaciones"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 inline-flex w-full justify-center items-center gap-2 rounded-full rounded-bl-none bg-[#c6d647] px-5 py-3 text-sm font-semibold text-slate-900 shadow-md transition hover:shadow-lg hover:-translate-y-0.5"
+              >
+                <FaWhatsapp />
+                Iniciar por WhatsApp
+              </a>
             </div>
 
             <p className="mt-3 text-sm text-slate-500">
-              Atención online para todo el país.
+              Servicio disponible en todo el país.
             </p>
           </div>
 

@@ -6,7 +6,10 @@ import {
   FaGraduationCap,
   FaTools,
   FaClock,
+  FaGlobe,
+  FaUserGraduate,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -16,32 +19,50 @@ const services = [
     featured: true,
   },
   {
+    icon: FaGlobe,
+    title: "Educación virtual en toda Colombia",
+    text: "Estudia desde cualquier lugar con acompañamiento.",
+  },
+  {
     icon: FaBook,
-    title: "Asesorías académicas",
-    text: "Tesis, trabajos, normas APA, correcciones y más.",
-  },
-  {
-    icon: FaGraduationCap,
-    title: "Bachillerato virtual",
-    text: "Obtén tu título siendo adulto, 100% online.",
-  },
-  {
-    icon: FaTools,
-    title: "Carreras técnicas",
-    text: "Formación práctica con certificación.",
+    title: "Asesorías tesis Bogotá",
+    text: "Apoyo profesional para tesis, trabajos y normas APA.",
   },
   {
     icon: FaClock,
-    title: "Cursos por horas",
-    text: "Aprendizaje flexible y certificado.",
+    title: "Preparación exámenes inglés",
+    text: "Prepárate para aprobar tu examen sin perder tiempo.",
+  },
+  {
+    icon: FaUserGraduate,
+    title: "Asesorías académicas",
+    text: "Correcciones, trabajos y acompañamiento completo.",
+  },
+  {
+    icon: FaGraduationCap,
+    title: "Títulos bachiller",
+    text: "Obtén tu título siendo adulto de forma flexible.",
+  },
+  {
+    icon: FaTools,
+    title: "Títulos técnicos laborales",
+    text: "Formación práctica con certificación laboral.",
   },
 ];
 
 export default function ServiciosSection() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white py-20 lg:py-28" id="servicios">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        
+        {/* HEADER */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mx-auto max-w-3xl text-center"
+        >
           <span className="inline-flex rounded-full bg-[#b7c772]/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#7f8f2f]">
             Servicios
           </span>
@@ -53,18 +74,23 @@ export default function ServiciosSection() {
           <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg">
             Reunimos las soluciones más buscadas en un solo lugar, con una opción principal destacada para que la decisión sea más rápida.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-          {services.map((item) => {
+        {/* GRID */}
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {services.map((item, i) => {
             const Icon = item.icon;
 
             return (
-              <article
+              <motion.article
                 key={item.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08 }}
+                viewport={{ once: true }}
                 className={`group relative overflow-hidden rounded-3xl border p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
                   item.featured
-                    ? "border-[#c6d647]/40 bg-gradient-to-br from-[#050816] to-[#0f172a] text-white md:col-span-2 xl:col-span-2"
+                    ? "border-[#c6d647]/40 bg-linear-to-br from-[#050816] to-[#0f172a] text-white sm:col-span-2 lg:col-span-2 xl:col-span-2"
                     : "border-slate-200 bg-white text-slate-900"
                 }`}
               >
@@ -99,7 +125,7 @@ export default function ServiciosSection() {
                     Servicio destacado
                   </div>
                 )}
-              </article>
+              </motion.article>
             );
           })}
         </div>

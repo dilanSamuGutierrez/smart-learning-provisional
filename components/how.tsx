@@ -1,6 +1,7 @@
 "use client";
 
 import { FaWhatsapp, FaCheckCircle } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const steps = [
   "Escribes por WhatsApp",
@@ -19,14 +20,20 @@ export default function ComoFuncionaSection() {
         }}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-[#050816]/90 via-[#0f172a]/80 to-[#0f172a]/60" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#050816]/90 via-[#0f172a]/80 to-[#0f172a]/60" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(198,214,71,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(183,199,114,0.12),transparent_35%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid items-center gap-10 lg:grid-cols-2">
 
           {/* IZQUIERDA */}
-          <div className="max-w-2xl text-white">
+          <motion.div
+            className="max-w-2xl text-white"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <span className="inline-flex rounded-full border border-[#c6d647]/30 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#c6d647] backdrop-blur-sm">
               Cómo funciona
             </span>
@@ -39,10 +46,15 @@ export default function ComoFuncionaSection() {
               Te guiamos paso a paso para que inicies rápido, sin procesos largos ni complicaciones innecesarias.
             </p>
 
+            {/* STEPS */}
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {steps.map((step, index) => (
-                <div
+                <motion.div
                   key={step}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
                   className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition-all duration-300 hover:bg-white/10"
                 >
                   <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#c6d647] text-slate-900">
@@ -54,24 +66,35 @@ export default function ComoFuncionaSection() {
                       Paso {index + 1}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
 
-            <a
-              href="https://wa.me/573000000000"
+            {/* CTA */}
+            <motion.a
+              href="https://wa.me/573212426083?text=Quiero%20obtener%20más%20info%20sobre%20sus%20servicios%20y%20certificaciones"
               target="_blank"
               rel="noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              viewport={{ once: true }}
               className="mt-8 inline-flex items-center gap-2 rounded-full rounded-bl-none bg-[#c6d647] px-5 py-3 text-sm font-semibold text-slate-900 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:brightness-105"
             >
               <FaWhatsapp className="h-4 w-4" />
               Empieza hoy mismo por WhatsApp
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
 
-          {/* DERECHA (MEJORADO - SIN REPETIR PASOS) */}
-          <div className="relative flex justify-end -mt-40">
-            <div className="relative z-10 w-full max-w-md translate-y-10 lg:translate-y-16">
+          {/* DERECHA */}
+          <motion.div
+            className="relative flex justify-center lg:justify-end mt-10 lg:-mt-40"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="relative z-10 w-full max-w-md lg:translate-y-16">
 
               <div className="overflow-hidden rounded-3xl rounded-bl-none border border-white/15 bg-white/95 shadow-2xl">
 
@@ -117,7 +140,7 @@ export default function ComoFuncionaSection() {
               </div>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

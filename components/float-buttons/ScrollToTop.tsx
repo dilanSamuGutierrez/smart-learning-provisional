@@ -22,7 +22,7 @@ export function ScrollToTop() {
     >
       <button
         onClick={scrollToTop}
-        className="w-full h-full bg-[#7FFFD4] text-black rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+        className="w-full h-full bg-[#c6d647] text-black rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
         aria-label="Ir arriba"
       >
         <ArrowUp className="w-6 h-6" />
