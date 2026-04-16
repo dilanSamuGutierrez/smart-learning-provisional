@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://smartlearningcolombia.com"),
 
   title:
-    "Certificación de inglés rápida y válida en Colombia (A2, B1, B2, C1)",
+    "Certificación de inglés rápida y válida en Colombia y en el exterior (A2, B1, B2, C1)",
   description:
-    "Obtén tu certificación de inglés en Colombia de forma rápida y 100% online. Cumple tu requisito de grado o mejora tu perfil profesional sin procesos complicados.",
+    "Obtén tu certificación de inglés en Colombia y en el exterior de forma rápida y 100% online. Cumple tu requisito de grado o mejora tu perfil profesional sin procesos complicados.",
 
   keywords: [
     "certificación de inglés Colombia",

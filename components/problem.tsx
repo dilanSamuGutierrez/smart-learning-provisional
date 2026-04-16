@@ -27,16 +27,24 @@ export default function ProblemaSection() {
               <span className="text-[#c6d647]">
                 certificado de inglés
               </span>{" "}
-              para graduarte?
+              y no sabes cómo conseguirlo a tiempo?
             </h2>
 
             <p className="mt-6 text-lg text-slate-600">
-              ¿No sabes cómo hacerlo rápido o no tienes tiempo para procesos largos?
+              Ya sea para graduarte, aplicar a un empleo o avanzar en un proceso importante,
+              el tiempo empieza a jugar en tu contra.
             </p>
 
             <p className="mt-4 text-slate-500">
-              Muchos estudiantes terminan retrasando su grado o perdiendo oportunidades
+              Muchos estudiantes y profesionales terminan retrasando su grado,
+              perdiendo oportunidades laborales, becas o incluso procesos de visa,
               simplemente por no cumplir este requisito a tiempo.
+            </p>
+
+            {/* NUEVO REFUERZO */}
+            <p className="mt-4 text-slate-500">
+              Este requisito también es clave en concursos de mérito y convocatorias donde
+              no tener el certificado puede dejarte fuera automáticamente.
             </p>
           </motion.div>
 

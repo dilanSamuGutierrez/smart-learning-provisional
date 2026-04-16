@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -59,6 +58,12 @@ export default function AboutSection() {
           <p className="mt-4 text-gray-600">
             En Smart Learning te ayudamos a obtener tu certificación de inglés de forma ágil,
             con acompañamiento y sin perder tiempo en procesos innecesarios.
+          </p>
+
+          {/* NUEVO TEXTO DE AUTORIDAD */}
+          <p className="mt-3 text-sm font-medium text-gray-800">
+            Desde 2016 ayudando a estudiantes como tú a certificarse a tiempo. 
+            Hoy, cientos de clientes satisfechos respaldan nuestro proceso.
           </p>
 
           {/* FEATURES + TESTIMONIO */}

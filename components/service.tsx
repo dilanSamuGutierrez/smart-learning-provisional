@@ -25,7 +25,7 @@ const services = [
   },
   {
     icon: FaBook,
-    title: "Asesorías tesis Bogotá",
+    title: "Asesorías tesis Monografías y Proyectos",
     text: "Apoyo profesional para tesis, trabajos y normas APA.",
   },
   {

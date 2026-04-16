@@ -84,7 +84,7 @@ export default function HeroCertificacionIngles() {
 
               <h1 className="mt-5 text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">
                 Certificación de inglés{" "}
-                <span className="text-[#c6d647]">rápida y válida</span> en Colombia
+                <span className="text-[#c6d647]">rápida y válida</span> en Colombia y el exterior
                 (A2, B1, B2, C1)
               </h1>
 

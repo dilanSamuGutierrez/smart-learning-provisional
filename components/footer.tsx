@@ -32,12 +32,12 @@ export default function Footer() {
             <div className="mt-6 space-y-3 text-sm text-slate-700">
               <div className="flex items-center gap-3">
                 <FaPhoneAlt className="text-[#c6d647]" />
-                <span>+57 300 000 0000</span>
+                <span>+57 321 242 6083</span>
               </div>
 
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-[#c6d647]" />
-                <span>contacto@smartlearning.com</span>
+                <span>smartlearningacademia@gmail.com</span>
               </div>
 
               <div className="flex items-center gap-3">
