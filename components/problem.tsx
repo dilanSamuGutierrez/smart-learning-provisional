@@ -19,7 +19,7 @@ export default function ProblemaSection() {
             className="max-w-xl lg:mt-40"
           >
             <span className="inline-block text-sm font-semibold uppercase tracking-widest text-[#c6d647]">
-              Problema real
+              Problema rea
             </span>
 
             <h2 className="mt-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
